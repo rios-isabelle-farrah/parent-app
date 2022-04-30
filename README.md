@@ -1,1 +1,1 @@
-# accelerator-front-end-app
+# accelerator-back-end
