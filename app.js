@@ -1,10 +1,10 @@
 // DEPENDENCIES
-const cors = require("cors");
 const express = require("express");
+const cors = require("cors");
 
 // CONFIGURATION
 const app = express();
-const filesController = require("./controllers/filesController");
+//const filesController = require("./controllers/filesController");
 
 // MIDDLEWARE
 app.use(cors());
@@ -15,7 +15,7 @@ app.use(express.json()); // Parse incoming JSON
 // const db = require("./db/config");
 
 
-app.use("/files", filesController);
+// app.use("/files", filesController);
 
 
 app.get("/", (req, res) => {
