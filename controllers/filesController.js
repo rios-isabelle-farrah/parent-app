@@ -1,24 +1,45 @@
 const express = require("express");
 const files = express.Router();
-const {
-  getAllFiles,
-  getFile,
-  addFile,
-  deleteFile,
-  updateFile,
-} = require("../queries/files");
-
-
+const { getAllFiles } = require("../queries/files");
 
 files.get("/", async (req, res) => {
-  const uid = req.query.uid;
-  try {
-    const allFiles = await getAllFiles(uid);
-    res.json(allFiles);
-  } catch (error) {
-    return error;
-  }
+  const allFiles = await getAllFiles();
+ console.log(res,'test')
+  res.json({ success: true, payload: allFiles });
 });
+
+// const {
+//   getAllFiles,
+//   getFile,
+//   addFile,
+//   deleteFile,
+//   updateFile,
+// } = require("../queries/files");
+
+
+
+// files.get("/", async (req, res) => {
+//   try {
+//     const allFiles = await getAllFiles();
+//     res.json(allFiles);
+//   } catch (error) {
+//     return error;
+//   }
+// });
+
+
+
+
+
+// files.get("/", async (req, res) => {
+//   const uid = req.query.uid;
+//   try {
+//     const allFiles = await getAllFiles(uid);
+//     res.json(allFiles);
+//   } catch (error) {
+//     return error;
+//   }
+// });
 
 files.get("/:id", async (req, res) => {
   const { id } = req.params;

@@ -1,16 +1,27 @@
-DROP DATABASE IF EXISTS parent_files_db;
+-- DROP DATABASE IF EXISTS parent_files_db;
 
-CREATE DATABASE parent_files_db;
+-- CREATE DATABASE parent_files_db;
 
-\c parent_files_db;
+-- \c parent_files_db;
+
+DROP TABLE IF EXISTS files CASCADE;
 
 CREATE TABLE
     files(
         id SERIAL PRIMARY key,
         child_name TEXT not null,
-        uid TEXT not null,
         additional_info TEXT not null
     );
+
+
+
+-- CREATE TABLE
+--     files(
+--         id SERIAL PRIMARY key,
+--         child_name TEXT not null,
+--         uid TEXT not null,
+--         additional_info TEXT not null
+--     );
 
 --     CREATE TABLE
 --     contacts(

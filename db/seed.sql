@@ -1,11 +1,26 @@
+
+
+
+
+
+
 \c parent_files_db;
 
 INSERT INTO
-    files(child_name, uid, additional_info)
+    files(child_name, additional_info)
 VALUES 
-    ('Madden','abcd','additional information'),
-    ('Ryan','efgh','additional information'),
-    ('Jason','ijkl','additional information');
+    ('Madden','additional information'),
+    ('Ryan','additional information'),
+    ('Jason','additional information');
+
+
+
+-- INSERT INTO
+--     files(child_name, uid, additional_info)
+-- VALUES 
+--     ('Madden','abcd','additional information'),
+--     ('Ryan','efgh','additional information'),
+--     ('Jason','ijkl','additional information');
 
 
 -- INSERT INTO

@@ -1,14 +1,28 @@
 const db = require("../db/config");
 
-const getAllFiles = async (uid) => {
+
+
+
+
+const getAllFiles = async () => {
   try {
-    const query = "SELECT * FROM files WHERE uid=$1";
-    const allFiles = await db.any(query, uid);
-    return { status: true, payload: allFiles };
-  } catch (error) {
-    return { status: false, payload: error };
+    const allFiles = await db.any("SELECT * FROM files");
+    return allFiles;
+  } catch (err) {
+    return err;
   }
 };
+
+
+// const getAllFiles = async (uid) => {
+//   try {
+//     const query = "SELECT * FROM files WHERE uid=$1";
+//     const allFiles = await db.any(query, uid);
+//     return { status: true, payload: allFiles };
+//   } catch (error) {
+//     return { status: false, payload: error };
+//   }
+// };
 
 const getFile = async (id, uid) => {
   try {
