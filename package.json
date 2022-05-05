@@ -2,10 +2,10 @@
   "name": "accelerator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "dev": "nodemon app.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "db:seed": "psql -U postgres -f db/seed.sql",
     "db:init": "psql -U postgres -f db/schema.sql",
     "test": "jest"
@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.18.1",
+    "pg-promise": "^10.11.1"
   }
 }
