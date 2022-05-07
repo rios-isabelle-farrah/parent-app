@@ -1,10 +1,10 @@
--- DROP DATABASE IF EXISTS parent_files_db;
+DROP DATABASE IF EXISTS parent_files_db;
 
--- CREATE DATABASE parent_files_db;
+CREATE DATABASE parent_files_db;
 
--- \c parent_files_db;
+\c parent_files_db;
 
-DROP TABLE IF EXISTS files CASCADE;
+-- DROP TABLE IF EXISTS files CASCADE;
 
 CREATE TABLE
     files(

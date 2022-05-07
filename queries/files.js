@@ -24,16 +24,30 @@ const getAllFiles = async () => {
 //   }
 // };
 
-const getFile = async (id, uid) => {
+const getFile = async (id) => {
   try {
-    const query = "SELECT * FROM files WHERE id=$1 and uid=$2";
-    const file = await db.one(query, [id, uid]);
+    const query = "SELECT * FROM files WHERE id=$1";
+    const file = await db.one(query, [id]);
     return { status: true, payload: file };
   } catch (error) {
     return { status: false, payload: error };
   }
 };
-//child_name, additional_info ,uid
+
+
+
+
+
+// const getFile = async (id, uid) => {
+//   try {
+//     const query = "SELECT * FROM files WHERE id=$1 and uid=$2";
+//     const file = await db.one(query, [id, uid]);
+//     return { status: true, payload: file };
+//   } catch (error) {
+//     return { status: false, payload: error };
+//   }
+// };
+
 const addFile = async (file) => {
   const { child_name, uid, additional_info } =
     file;

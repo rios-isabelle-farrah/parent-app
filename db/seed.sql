@@ -1,8 +1,9 @@
+\c parent_files_db;
 
 INSERT INTO
     files(child_name, additional_info)
 VALUES 
-    ('Madden','additional information'),
+    ('MaddenJ','school file'),
     ('Ryan','additional information'),
     ('Jason','additional information');
 

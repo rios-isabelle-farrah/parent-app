@@ -1,6 +1,17 @@
 const express = require("express");
 const files = express.Router();
 const { getAllFiles } = require("../queries/files");
+const {
+  getFile,
+  // addFile,
+  // deleteFile,
+  // updateFile,
+} = require("../queries/files");
+
+
+
+
+
 
 files.get("/", async (req, res) => {
   const allFiles = await getAllFiles();
@@ -8,13 +19,22 @@ files.get("/", async (req, res) => {
   res.json({ success: true, payload: allFiles });
 });
 
-// const {
-//   getAllFiles,
-//   getFile,
-//   addFile,
-//   deleteFile,
-//   updateFile,
-// } = require("../queries/files");
+files.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  // const uid = req.query.uid;
+  try {
+    const file = await getFile(id);
+    res.json(file);
+  } catch (error) {
+    return error;
+  }
+});
+
+
+
+
+
+
 
 
 
@@ -26,6 +46,22 @@ files.get("/", async (req, res) => {
 //     return error;
 //   }
 // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
