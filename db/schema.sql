@@ -55,11 +55,11 @@ CREATE TABLE
 --     );
 
 
--- CREATE TABLE
---     meetings(
---         id SERIAL PRIMARY key,
---         file_id INT REFERENCES files (id) ON DELETE CASCADE,
---         date TEXT,
---         category TEXT not null,	
---         details TEXT NOT NULL
---     );
+CREATE TABLE
+    meetings(
+        id SERIAL PRIMARY key,
+        file_id INT REFERENCES files (id) ON DELETE CASCADE,
+        date TEXT,
+        category TEXT not null,	
+        details TEXT NOT NULL
+    );

@@ -4,6 +4,8 @@ const db = require("../db/config");
 
 
 
+
+
 const getAllFiles = async () => {
   try {
     const allFiles = await db.any("SELECT * FROM files");

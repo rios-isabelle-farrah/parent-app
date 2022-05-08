@@ -5,7 +5,13 @@ INSERT INTO
 VALUES 
     ('MaddenJ','school file'),
     ('Ryan','additional information'),
-    ('Jason','additional information');
+    ('Jason','additional information'),
+    ('JohnJ','school file'),
+    ('Danelyn','additional information'),
+    ('Kann','additional information'),
+    ('NigeJ','school file'),
+    ('Peter','additional information'),
+    ('Jazmine','additional information');
 
 
 
@@ -38,12 +44,12 @@ VALUES
 --     (2,'food intake','lunch','2021-08-21'),
 --     (3,'food intake','lunch','2021-08-21');
 
---     INSERT INTO
---     meetings(file_id,category,details,date)
--- VALUES 
---     (1,'iep','what was discussed','2021-08-21'),
---     (2,'iep','what was discussed','2021-08-21'),
---     (3,'iep','what was discussed','2021-08-21');
+    INSERT INTO
+    meetings(file_id,category,details,date)
+VALUES 
+    (1,'iep','what was discussed','2021-08-21'),
+    (2,'iep','what was discussed','2021-08-21'),
+    (3,'iep','what was discussed','2021-08-21');
 
 
 
