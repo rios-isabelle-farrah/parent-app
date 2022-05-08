@@ -4,6 +4,11 @@ CREATE DATABASE parent_files_db;
 
 \c parent_files_db;
 
+
+
+
+DROP TABLE IF EXISTS files CASCADE;
+DROP TABLE IF EXISTS meetings;
 -- DROP TABLE IF EXISTS files CASCADE;
 
 CREATE TABLE
@@ -13,6 +18,15 @@ CREATE TABLE
         additional_info TEXT not null
     );
 
+
+CREATE TABLE
+    meetings(
+        id SERIAL PRIMARY key,
+        date TEXT,
+        file_id INT REFERENCES files (id) ON DELETE CASCADE,
+        category TEXT not null,	
+        details TEXT NOT NULL
+    );
 
 
 -- CREATE TABLE
@@ -55,11 +69,3 @@ CREATE TABLE
 --     );
 
 
-CREATE TABLE
-    meetings(
-        id SERIAL PRIMARY key,
-        file_id INT REFERENCES files (id) ON DELETE CASCADE,
-        date TEXT,
-        category TEXT not null,	
-        details TEXT NOT NULL
-    );

@@ -5,7 +5,7 @@ const getAllMeetings = async (file_id) => {
   const authCheck = await db.any(queryOne, [file_id]);
   if (authCheck.length) {
     try {
-      const queryTwo = "SELECT * FROM meetingss WHERE file_id=$1";
+      const queryTwo = "SELECT * FROM meetings WHERE file_id=$1";
       const allMeetings = await db.any(queryTwo, file_id);
       return { status: true, payload: allMeetings };
     } catch (error) {
