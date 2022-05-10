@@ -1,7 +1,7 @@
 \c parent_files_db;
 
 INSERT INTO
-    files(child_name, additional_info)
+    files(child_name, details)
 VALUES 
     ('MaddenJ','school file'),
     ('Ryan','additional information'),
@@ -16,7 +16,7 @@ VALUES
 
 
 -- INSERT INTO
---     files(child_name, uid, additional_info)
+--     files(child_name, uid, details)
 -- VALUES 
 --     ('Madden','abcd','additional information'),
 --     ('Ryan','efgh','additional information'),

@@ -51,15 +51,14 @@ const getFile = async (id) => {
 // };
 
 const addFile = async (file) => {
-  const { child_name, uid, additional_info } =
+  const { child_name, details } =
     file;
   try {
     const query =
-      "INSERT INTO files (child_name, uid, additional_info) VALUES ($1, $2, $3) RETURNING *";
+      "INSERT INTO files (child_name, details) VALUES ($1, $2) RETURNING *";
     const newFile = await db.one(query, [
       child_name,
-      uid,
-      additional_info
+      details
     ]);
     return { status: true, payload: newFile };
   } catch (error) {
@@ -67,28 +66,27 @@ const addFile = async (file) => {
   }
 };
 
-const deleteFile = async (id, uid) => {
+const deleteFile = async (id) => {
   try {
-    const query = "DELETE FROM files WHERE id=$1 AND uid=$2 RETURNING *";
-    const deletedFile = await db.one(query, [id, uid]);
+    const query = "DELETE FROM files WHERE id=$1 RETURNING *";
+    const deletedFile = await db.one(query, [id]);
     return { status: true, payload: deletedFile };
   } catch (error) {
     return { status: false, payload: error };
   }
 };
 
-const updateFile = async (id, body, uid) => {
-  const { child_name, additional_info} = body;
-  const queryOne = "SELECT * FROM files WHERE uid=$1 AND id=$2";
-  const authCheck = await db.any(queryOne, [uid, id]);
+const updateFile = async (id, body) => {
+  const { child_name, details} = body;
+  const queryOne = "SELECT * FROM files WHERE id=$1";
+  const authCheck = await db.any(queryOne, [id]);
   if (authCheck.length) {
     try {
       const query =
-        "UPDATE files SET child_name=$1, additional_info=$2, uid=$3  WHERE id=$4 RETURNING *";
+        "UPDATE files SET child_name=$1, details=$2, WHERE id=$3 RETURNING *";
       const updatedFile = await db.one(query, [
         child_name,
-        additional_info,
-        uid,
+        details,
         id,
       ]);
       return { status: true, payload: updatedFile };

@@ -15,7 +15,7 @@ CREATE TABLE
     files(
         id SERIAL PRIMARY key,
         child_name TEXT not null,
-        additional_info TEXT not null
+        details TEXT not null
     );
 
 
@@ -34,7 +34,7 @@ CREATE TABLE
 --         id SERIAL PRIMARY key,
 --         child_name TEXT not null,
 --         uid TEXT not null,
---         additional_info TEXT not null
+--         details TEXT not null
 --     );
 
 --     CREATE TABLE
