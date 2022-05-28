@@ -58,12 +58,10 @@ files.delete("/:id", async (req, res) => {
 });
 
 files.put("/:id", async (req, res) => {
-  const { body, params } = req;
-  const { id } = params;
-  // const uid = req.query.uid;
   try {
-    const file = await updateFile(id, body);
-    res.json(file);
+    const files = await updateFile(req.params.id, req.body);
+
+    res.json(files);
   } catch (error) {
     return error;
   }
