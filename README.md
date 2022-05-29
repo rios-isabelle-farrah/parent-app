@@ -37,3 +37,12 @@ PG_PASSWORD="94131b67e11f64f47632fa8360be66f87dc3086126620dbef0fc674bd7e63da8"
 
 
 --------------
+
+
+local versiom
+PORT=3333
+PG_HOST=localhost
+PG_PORT=5432
+PG_DATABASE=parent_files_db
+PG_USER=postgres
+PG_PASSWORD=""

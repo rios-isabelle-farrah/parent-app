@@ -35,11 +35,13 @@ meetings.get("/:id", async (req, res) => {
 
 meetings.post("/", async (req, res) => {
   const { body, params } = req;
-  const { file_id } = params;
-  // const uid = req.query.uid;
+  const { file_id,id } = params;
+console.log(body,"b")
+console.log(file_id,"f")
+console.log(id,"i")
   try {
-    const meeting = await addMeeting(body, file_id);
-    res.json(meeting);
+    const newestMeeting = await addMeeting(body, id, file_id);
+    res.json(newestMeeting);
   } catch (error) {
     return error;
   }
@@ -56,12 +58,17 @@ meetings.delete("/:id", async (req, res) => {
   }
 });
 
+
+
 meetings.put("/:id", async (req, res) => {
-  const { body, params } = req;
-  const { id } = params;
+  const { body, params} = req;
+  const { id, file_id } = params;
   // const uid = req.query.uid;
+  // console.log(body,"body")
+  // console.log(file_id,"file_id")
+  // console.log(id,"id")
   try {
-    const meeting = await updateMeeting(id, body);
+    const meeting = await updateMeeting( body, id, file_id);
     res.json(meeting);
   } catch (error) {
     return error;

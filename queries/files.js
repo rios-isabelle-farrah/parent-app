@@ -76,31 +76,6 @@ const deleteFile = async (id) => {
   }
 };
 
-// const updateFile = async (id, body) => {
-//   const { child_name, details} = body;
-//   const queryOne = "SELECT * FROM files WHERE id=$1";
-//   const authCheck = await db.any(queryOne, [id]);
-//   if (authCheck.length) {
-//     try {
-//       const query =
-//         "UPDATE files SET child_name=$1, details=$2, WHERE id=$3 RETURNING *";
-//       const updatedFile = await db.one(query, [
-//         child_name,
-//         details,
-//         id,
-//       ]);
-//       return { status: true, payload: updatedFile };
-//     } catch (error) {
-//       return { status: false, payload: error };
-//     }
-//   } else {
-//     return { status: false, payload: "user doesn't match" };
-//   }
-// };
-
-
-
-
 const updateFile = async (id, file) => {
   const { child_name, details } =
   file;
@@ -122,18 +97,7 @@ const updateFile = async (id, file) => {
 
 
 
-// const updateShirt = async (id, shirt) => {
-//   const { type_of, size, color, price, in_stock } = shirt;
-//   try {
-//     const query =
-//       "UPDATE shirts SET type_of = $1, size = $2, color = $3, price = $4, in_stock = $5 WHERE id = $6 RETURNING *";
-//     const result = await db.one(query, [type_of, size, color, price, in_stock, id]);
-//     return result;
-//   } catch (err) {
-//     console.log(err)
-//     return err;
-//   }
-// };
+
 
 
 
